@@ -7,7 +7,7 @@ const SchemaUser = Schema({
     },
     sexo: {
         type: String,
-        required: true
+        default: 'Indefinido'
     },
     password: {
         type: String,
@@ -21,7 +21,6 @@ const SchemaUser = Schema({
     // paises nicho Peru, Chile, Colombia
     pais: {
         type: String,
-        required: true
     },
     // se calcuaria solicitando la fecha de nacimiento
     edad: {

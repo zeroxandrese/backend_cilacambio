@@ -29,8 +29,8 @@ router.put('/:id', [
     validarJWT,
     idValidatorTransOwner,
     check('id', 'El id no es valido').isMongoId(),
-    check('id').custom(findIdTransactions),
-    check('nOperacionFinal','El numero de operacion presenta problemas' ).custom(findNOperation),
+/*     check('id').custom(findIdTransactions),
+    check('nOperacionFinal','El numero de operacion presenta problemas' ).custom(findNOperation), */
     validarCampos
 ], transactionsPut);
 
