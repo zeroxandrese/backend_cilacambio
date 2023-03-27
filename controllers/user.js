@@ -36,7 +36,9 @@ const usersPut = async (req, res = response) => {
 
     const usuario = await User.findByIdAndUpdate(id, user);
 
-    res.status(201).json(usuario);
+    res.status(201).json({
+        user: usuario
+    });
 };
 
 const usersPost = async (req, res = response) => {

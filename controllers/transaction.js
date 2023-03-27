@@ -20,7 +20,9 @@ const transactionsOneGet = async (req, res = response) => {
 
     // se estan enviando dos promesas al mismo tiempo para calcular el paginado de transacciones
     const transactions = await Transactions.findOne({idOperacion});
-    res.status(201).json(transactions);
+    res.status(201).json({
+        transactions: transactions
+    });
 };
 
 const transactionsPut = async (req, res = response) => {
@@ -30,7 +32,9 @@ const transactionsPut = async (req, res = response) => {
 
     const transaction = await Transactions.findByIdAndUpdate(id, transactions);
 
-    res.status(201).json(transaction);
+    res.status(201).json({
+        transactions: transaction
+    });
 };
 
 const transactionsPost = async (req, res = response) => {
